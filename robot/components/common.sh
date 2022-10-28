@@ -1,4 +1,4 @@
-LOGFILE = /tmp/$Component.log
+LOGFILE = /tmp/$COMPONENT.log
 USER_ID = (uid -u)
 
 #validation for root user
