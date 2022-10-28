@@ -1,9 +1,9 @@
 LOGFILE=/tmp/$COMPONENT.log
 
-USERID=$(uid -u)
+USER_ID=$(id -u)
 
 #validation for root user
-if[ $USERID -ne 0 ] ;then
+if[ $USER_ID -ne 0 ] ;then
     echo -e "\e[31m You must execute as a Root User\e[0m"
     exit 1
 fi
