@@ -2,16 +2,16 @@
 
 set -e 
 
-Component = frontend
-source = components/common.sh
+COMPONENT=frontend
 
+source  components/common.sh
 
 echo -n " Installing Nginx"
 yum install nginx -yum &>> $LOGFILE
 stat $?
 
 echo -n " Downloading Nginx"
-curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
+curl -s -L -o /tmp/$COMPONENT.zip "https://github.com/stans-robot-project/$COMPONENT/archive/main.zip"
 stat $?
 
 echo -n " Cleaning the directory "
@@ -20,10 +20,10 @@ rm -rf *
 stat $?
 
 echo -n " Deploying in default location"
-unzip /tmp/frontend.zip &>> $LOGFILE
-mv frontend-main/* .
+unzip /tmp/$COMPONENT.zip &>> $LOGFILE
+mv $COMPONENT-main/* .
 mv static/* .
-rm -rf frontend-main README.md $LOGFILE
+rm -rf $COMPONENT-main README.md &>> $LOGFILE
 stat $?
 
 echo -n " configuring proxy "
