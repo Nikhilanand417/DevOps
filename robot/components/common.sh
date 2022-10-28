@@ -1,5 +1,6 @@
-LOGFILE =/tmp/$COMPONENT.log
-USER_ID =$(uid -u)
+LOGFILE=/tmp/$COMPONENT.log
+
+USER_ID=$(uid -u)
 
 #validation for root user
 if[ $USER_ID -ne 0 ] ;then
