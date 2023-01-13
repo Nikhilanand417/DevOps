@@ -18,7 +18,7 @@ echo "name is $name"
 
 echo "The load average of the server is $Load"
 
-if ["$Load" > 1]; then
+if ["$Load" -ge "1"]; then
     echo "reached max load"
     Else
     echo "good condition"
