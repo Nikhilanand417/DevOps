@@ -9,5 +9,6 @@ Sample(){
     echo -e "\e[33m Todays date is $a\e[0m"
 }
 
+echo $0
 
 Sample
