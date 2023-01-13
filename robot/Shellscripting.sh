@@ -10,4 +10,4 @@ Sample(){
 }
 
 Sample
-echo $*
+echo $$
