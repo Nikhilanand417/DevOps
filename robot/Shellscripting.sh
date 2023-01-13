@@ -18,10 +18,8 @@ echo "name is $name"
 
 echo "The load average of the server is $Load"
 
-case $Load in
-    >1)
+if [$Load > 1]; then
     echo "reached max load"
-    ;;
-    <1)
+    Else
     echo "good condition"
-esac
+fi
