@@ -3,11 +3,11 @@
 a=10
 b=20
 c=$1
-Today_date="$(date +%F)"
+Today="$(date +%F)"
 Sample(){
     
-    echo -e "\e[33m Todays date is $a\e[0m"
+    echo -e "\e[33m Todays date is $Today\e[0m"
 }
 
 Sample
-echo $0
+echo $*
