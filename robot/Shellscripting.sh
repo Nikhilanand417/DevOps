@@ -11,3 +11,6 @@ Sample(){
 
 Sample
 echo $$
+
+read -p 'Enter the name': name 
+echo "name is $name" 
