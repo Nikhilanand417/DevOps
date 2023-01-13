@@ -6,7 +6,7 @@ c=$1
 Today= "$(date +%F)"
 Sample(){
     
-    echo -e "\e[33m Todays date is $Today\e[0m"
+    echo -e "\e[33m Todays date is ${Today}\e[0m"
 }
 
 
