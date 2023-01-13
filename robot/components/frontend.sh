@@ -27,7 +27,8 @@ rm -rf $COMPONENT-main README.md &>> $LOGFILE
 stat $?
 
 echo -n " configuring proxy "
-mv localhost.conf /etc/nginx/default.d/roboshop.conf
+mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> $LOGFILE
+stat $?
 
 echo -n "starting the service"
 systemctl enable nginx
