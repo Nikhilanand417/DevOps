@@ -16,4 +16,12 @@ echo $$
 read -p 'Enter the name': name 
 echo "name is $name"
 
-echo " The load average of the server is $Load"
+echo "The load average of the server is $Load"
+
+case $Load in
+    >1)
+    echo "reached max load"
+    ;;
+    <1)
+    echo "good condition"
+esac
