@@ -1,6 +1,6 @@
 #!/bin/bash
 
-a= 10
+a=10
 b=20
 c=$1
 Today_date="$(date +%F)"
