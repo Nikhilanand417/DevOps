@@ -27,7 +27,7 @@ stat $?
 
 echo -n "unzipping the file"
 cd /tmp
-unzip $COMPONENT.zip &>> $LOGFILE
+unzip -o $COMPONENT.zip &>> $LOGFILE
 stat $?
 
 echo -n "Injecting the schema"
