@@ -97,7 +97,7 @@ DOWNLOAD_AND_EXTRACT() {
     stat $? 
 
     echo -n "Performing Cleanup:"
-    rm -rf /home/$APPUSER/$COMPONENT
+    #rm -rf /home/$APPUSER/$COMPONENT
     cd /home/$APPUSER/ 
     unzip -o /tmp/$COMPONENT.zip  &>> $LOGFILE && mv $COMPONENT-main $COMPONENT  &>> $LOGFILE 
     stat $? 
