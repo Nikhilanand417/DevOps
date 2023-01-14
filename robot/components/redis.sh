@@ -1,22 +1,24 @@
-#!/bin/bash
-set -e
+#!/bin/bash 
+set -e 
 
-COMPONENT=$COMPONENT
+COMPONENT=redis
+
 source components/common.sh
 
-echo -n "Setting up $COMPONENT Repo"
-curl -L https://raw.githubusercontent.com/stans-robot-project/$COMPONENT/main/$COMPONENT.repo -o /etc/yum.repos.d/$COMPONENT.repo &>> $LOGFILE
-stat $?
+echo -n "Configuring $COMPONENT repo:"
+curl -L https://raw.githubusercontent.com/stans-robot-project/redis/main/redis.repo -o /etc/yum.repos.d/redis.repo &>> $LOGFILE
+stat $? 
 
-echo -n " Installing $COMPONENT"
-yum install $COMPONENT-6.2.7 -y &>> $LOGFILE
-stat $?
+echo -n "Installing $COMPONENT:"
+yum install redis-6.2.7 -y  &>> $LOGFILE
+stat $? 
 
-echo -n "Updating the Band IP of $COMPONENT"
-sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/$COMPONENT/$COMPONENT.conf &>> $LOGFILE
-stat $?
+echo -n "Whitelisting redis to others:"
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/redis/redis.conf
+stat $? 
 
-echo -n " starting the service " 
-systemctl enable $COMPONENT
-systemctl start $COMPONENT
-stat $?
+echo -n "Starting $COMPONENT service:"
+systemctl daemon-reload 
+systemctl enable redis 
+systemctl restart redis 
+stat $? 
