@@ -1,7 +1,7 @@
 #!/bin/bash
 set -e 
 
-COMPONENT=$COMPONENT
+COMPONENT=mongodb
 source components/common.sh
 
 echo -n " Setting up the repo for Mongo DB"
